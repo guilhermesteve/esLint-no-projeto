@@ -91,9 +91,11 @@ npm init -y</code></pre>
 
         <h2>Passo 3: Configurando o ESLint</h2>
         <p>Crie um arquivo chamado .eslintrc.json na raiz do projeto com o seguinte conteúdo:</p>
-        <pre><code>{
-  "extends": "@rocketseat/eslint-config/node"
-}</code></pre>
+        <pre><code>
+        {
+            "extends": "@rocketseat/eslint-config/node"
+        }
+        </code></pre>
         <p>Isso irá configurar o ESLint com as regras recomendadas para projetos Node.js.</p>
 
         <h2>Passo 4: Instale uma configuração compartilhada do ESLint</h2>
@@ -104,31 +106,40 @@ npm init -y</code></pre>
             para o ESLint que são amplamente utilizadas na comunidade brasileira de desenvolvedores. Você pode
             instalá-las executando o seguinte comando no terminal integrado do VS Code:
         </p>
-        <pre><code>{
-        npm i -D eslint @rocketseat/eslint-config
-      }</code></pre>
+        <pre><code>
+            npm i -D eslint @rocketseat/eslint-config
+        </code></pre>
 
         <h2>Passo 6: Instale a extensão ESLint no VS Code</h2>
         <p>Você pode adicionar utilizando o seguinte comando: </p>
-        <pre><code>{
-        code --install-extension dbaeumer.vscode-eslint
-      }</code></pre>
+        <pre><code>
+            code --install-extension dbaeumer.vscode-eslint
+        </code></pre>
 
-      <h2>Passo 7: Configuração VsCode </h2>
-      <p>configurando o ESLint no arquivo de configuração do VS Code:` > settings.json `</p>
-      <pre><code>{
+        <h2>Passo 7: Configuração VsCode </h2>
+        <p>configurando o ESLint no arquivo de configuração do VS Code:` > settings.json `</p>
+        <pre><code>
         {
+            //... outras configurações 
             "editor.codeActionsOnSave": {
-              "source.fixAll.eslint": true
-            }
-          }
-    }</code></pre>
-    <h2>Passo 7: Configuração package.json</h2>
-    <p>Crie um script para ser executado quando tiver que ajustar em lote os arquivos da aplicação</p>
-    <pre><code>{
+                "source.fixAll.eslint": true
+            },
+        }
+        </code></pre>
+        <h2>Passo 8: Configuração package.json</h2>
+        <p>Crie um script para ser executado quando tiver que ajustar em lote os arquivos da aplicação</p>
+        <pre><code>
         {
+           //.... restante do package.json
             "scripts": {
               "lint": "eslint . --ext .ts,.tsx"
             }
-          }
-    }</code></pre>
+        }
+        </code></pre>
+        <h2>Verificação </h2>
+        <p> Agora que tudo está configurado, você pode verificar se o ESLint está funcionando corretamente abrindo um arquivo JavaScript e salvando-o. O VS Code deve mostrar um prompt indicando que as correções foram aplicadas automaticamente. Se você receber um erro, verifique se seguiu todos os passos corretamente.</p>
+        <p>
+            Espero que este tutorial tenha sido útil!
+        </p>
+
+           
