@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurando ESLint em um projeto Node.js com VS Code</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        pre {
+            background-color: #f5f5f5;
+            padding: 1rem;
+            overflow-x: scroll;
+        }
+
+        code {
+            font-family: monospace;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: #0078d4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Configurando ESLint em um projeto Node.js com VS Code</h1>
+        <p>Este tutorial irá guiá-lo na configuração do ESLint em um projeto Node.js utilizando o VS Code como editor de
+            código.</p>
+
+        <h2>Pré-requisitos</h2>
+        <p>Para seguir este tutorial, você precisa ter o seguinte instalado no seu computador:</p>
+        <ul>
+            <li>Node.js (versão 12 ou superior)</li>
+            <li>VS Code (ou qualquer outro editor de sua preferência)</li>
+        </ul>
+
+
+        <h2>Passo 1: Inicializando o projeto Node.js</h2>
+        <p>Antes de começar, certifique-se de ter o Node.js instalado em sua máquina. Em seguida, abra o terminal e
+            execute o seguinte comando:</p>
+        <pre><code>mkdir [meu-projeto]
+cd [meu-projeto]
+npm init -y</code></pre>
+
+        <h2>Passo 2: Instalando o ESLint</h2>
+        <p>Para instalar o ESLint, execute o seguinte comando no terminal:</p>
+        <pre><code>npm i -D eslint</code></pre>
+
+        <h2>Passo 3: Configurando o ESLint</h2>
+        <p>Crie um arquivo chamado .eslintrc.json na raiz do projeto com o seguinte conteúdo:</p>
+        <pre><code>{
+  "extends": "@rocketseat/eslint-config/node"
+}</code></pre>
+        <p>Isso irá configurar o ESLint com as regras recomendadas para projetos Node.js.</p>
+
+        <h2>Passo 4: Instale uma configuração compartilhada do ESLint</h2>
+        <p>O ESLint tem muitas configurações disponíveis para escolher, mas é recomendável usar uma configuração
+            compartilhada para garantir que seu projeto esteja seguindo as melhores práticas de desenvolvimento.
+        </p>
+        <p>A Rocketseat, uma empresa brasileira de educação em tecnologia, criou algumas configurações compartilhadas
+            para o ESLint que são amplamente utilizadas na comunidade brasileira de desenvolvedores. Você pode
+            instalá-las executando o seguinte comando no terminal integrado do VS Code:
+        </p>
+        <pre><code>{
+        npm i -D eslint @rocketseat/eslint-config
+      }</code></pre>
+
+        <h2>Passo 6: Instale a extensão ESLint no VS Code</h2>
+        <p>Você pode adicionar utilizando o seguinte comando: </p>
+        <pre><code>{
+        code --install-extension dbaeumer.vscode-eslint
+      }</code></pre>
+
+      <h2>Passo 7: Configuração VsCode </h2>
+      <p>configurando o ESLint no arquivo de configuração do VS Code:` > settings.json `</p>
+      <pre><code>{
+        {
+            "editor.codeActionsOnSave": {
+              "source.fixAll.eslint": true
+            }
+          }
+    }</code></pre>
+    <h2>Passo 7: Configuração package.json</h2>
+    <p>Crie um script para ser executado quando tiver que ajustar em lote os arquivos da aplicação</p>
+    <pre><code>{
+        {
+            "scripts": {
+              "lint": "eslint . --ext .ts,.tsx"
+            }
+          }
+    }</code></pre>
